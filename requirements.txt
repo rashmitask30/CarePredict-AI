@@ -13,6 +13,6 @@ seaborn==0.13.2
 ipykernel==7.4.0
 jupyter==1.1.1
 
-# Needed later for the application (Stage 13). Not installed yet.
-# fastapi
-# uvicorn
+# Application (FastAPI backend). Installed with: python -m pip install fastapi uvicorn
+fastapi
+uvicorn

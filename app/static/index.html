@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>CarePredict-AI | Readmission Risk Decision Support</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>CarePredict-AI</h1>
+    <p>30-day hospital readmission risk for diabetic patient encounters</p>
+  </header>
+
+  <div class="banner">
+    <strong>Decision-support prototype only.</strong> Not a clinical diagnosis and not a replacement for clinician judgment.
+    Trained on historical 1999-2008 US hospital data; no real patient data is stored.
+  </div>
+
+  <main>
+    <section class="card">
+      <div class="card-head">
+        <h2>Encounter details</h2>
+        <div class="buttons">
+          <button type="button" id="ex-low" class="ghost">Example: lower risk</button>
+          <button type="button" id="ex-high" class="ghost">Example: higher risk</button>
+        </div>
+      </div>
+      <div id="form" class="grid"></div>
+      <button id="go" type="button">Predict readmission risk</button>
+      <p id="error" class="error"></p>
+    </section>
+
+    <section class="card" id="result" hidden>
+      <h2>Result</h2>
+      <div id="tier" class="tier"></div>
+      <p class="prob"></p>
+      <p id="guidance"></p>
+      <h3>Main factors for this prediction</h3>
+      <ul id="factors"></ul>
+      <p class="small" id="calnote"></p>
+      <p class="disc"></p>
+    </section>
+  </main>
+
+  <footer>
+    Risk categories are based on how a score ranks among historical validation encounters (top 20% = High,
+    next 30% = Medium, rest = Low). They are not clinically validated thresholds.
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
